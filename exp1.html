@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Result</title>
+
+<style>
+
+body{
+font-family: Arial;
+background-color:#e6f2ff;
+text-align:center;
+}
+
+.container{
+width:400px;
+margin:auto;
+margin-top:50px;
+padding:20px;
+background:white;
+border-radius:8px;
+}
+
+input{
+padding:8px;
+margin:5px;
+width:200px;
+}
+
+button{
+padding:8px 15px;
+background-color:green;
+color:white;
+border:none;
+}
+
+#output{
+margin-top:20px;
+font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Result Calculator</h2>
+
+<input type="number" id="sub" placeholder="Enter number of subjects">
+
+<br><br>
+
+<button onclick="result()">Calculate Result</button>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+function result(){
+
+var n = document.getElementById("sub").value;
+
+var total = 0;
+
+for(var i=1;i<=n;i++)
+{
+var marks = parseInt(prompt("Enter marks of subject "+i));
+total = total + marks;
+}
+
+var avg = total / n;
+
+var grade;
+var status;
+
+if(avg >= 80)
+{
+grade = "A";
+}
+else if(avg >= 60)
+{
+grade = "B";
+}
+else if(avg >= 50)
+{
+grade = "C";
+}
+else
+{
+grade = "D";
+}
+
+if(avg >= 40)
+{
+status = "PASS";
+}
+else
+{
+status = "FAIL";
+}
+
+document.getElementById("output").innerHTML =
+"Total Marks : " + total + "<br>" +
+"Average Marks : " + avg + "<br>" +
+"Grade : " + grade + "<br>" +
+"Result : " + status;
+
+}
+
+</script>
+
+</body>
+</html>

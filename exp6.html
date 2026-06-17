@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Lab</title>
+</head>
+
+<body style="background-color: white;">
+
+<h2 id="h" style="font-size:20px;">Welcome to JavaScript Lab</h2>
+
+<input type="text" id="t" placeholder="Enter text">
+<br><br>
+
+<button onclick="changeH()">Change Heading</button>
+<button onclick="bg()">Background</button>
+<button onclick="size()">Font Size</button>
+<br><br>
+
+<button onclick="showHide()">Show/Hide</button>
+<button onclick="reset()">Reset</button>
+
+<p id="p" style="display:block;">This is a sample paragraph.</p>
+
+<script>
+
+function changeH() {
+    var text = document.getElementById("t").value;
+    document.getElementById("h").innerHTML = text;
+}
+
+function bg() {
+    document.body.style.backgroundColor = "yellow";
+}
+
+
+   
+function size() {
+    var h = document.getElementById("h");
+    h.style.fontSize = "30px";
+}
+
+function showHide() {
+    var x = document.getElementById("p");
+
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function reset() {
+    document.getElementById("h").innerHTML = "Welcome to JavaScript Lab";
+    document.body.style.backgroundColor = "white";
+    document.getElementById("h").style.fontSize = "20px";
+    document.getElementById("p").style.display = "block";
+    document.getElementById("t").value = "";
+}
+
+</script>
+
+</body>
+</html>
